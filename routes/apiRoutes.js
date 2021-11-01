@@ -11,6 +11,27 @@ router.get('/', (req, res) => {
 });
 
 /// /////////////////////////////////
+<<<<<<< Updated upstream
+=======
+/// ////NBA ENDPOINTS////////
+/// /////////////////////////////////
+
+const nbaPlayerQuery = 'SELECT * FROM AWARDS';
+router.get('/nba-players', async (req, res) => {
+  try {
+    const result = await db.sequelizeDB.query(nbaPlayerQuery, {
+      type: sequelize.QueryTypes.SELECT
+    });
+    console.log('touched /nba-players with GET');
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
+
+/// /////////////////////////////////
+>>>>>>> Stashed changes
 /// ////Dining Hall Endpoints////////
 /// /////////////////////////////////
 router.get('/dining', async (req, res) => {
@@ -270,4 +291,8 @@ router.get('/custom', async (req, res) => {
   }
 });
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 export default router;
